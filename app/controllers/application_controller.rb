@@ -15,11 +15,8 @@ class ApplicationController < ActionController::Base
 
   def client
     @client ||= Line::Bot::Client.new { |config|
-      # config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
-      # config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
-      # ローカルで動かすだけならベタ打ちでもOK
-      config.channel_secret = Rails.application.credentials.line[:channel_secret]
-      config.channel_token = Rails.application.credentials.line[:channel_token]
+      config.channel_secret = ENV["LINE_CHANNEL_SECRET"]
+      config.channel_token = ENV["LINE_CHANNEL_TOKEN"]
     }
   end
 end
