@@ -1,24 +1,26 @@
-# README
+# LINE BOTの開発
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+1. リポジトリのクローン
 
-Things you may want to cover:
+```bash
+$ git clone git@github.com:yokoto/line-bot-app.git
+```
 
-* Ruby version
+2. dockerイメージのビルド
 
-* System dependencies
+```bash
+$ docker-compose build
+```
 
-* Configuration
+3. DBの作成
 
-* Database creation
+```
+$ docker-compose run web bundle exec rails db:create
+$ docker-compose run web bundle exec rails db:migrate
+```
 
-* Database initialization
+4. Webサーバーの起動
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+```
+$ docker-compose up
+```
