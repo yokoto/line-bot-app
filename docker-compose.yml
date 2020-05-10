@@ -18,5 +18,5 @@ services:
       - "3000:3000"
     volumes:
       - .:/my_app
-  volumes:
-    db:
+volumes:
+  db:
