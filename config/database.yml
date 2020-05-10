@@ -9,20 +9,20 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   encoding: unicode
-  username: yokota
-  password: 1234
-  host: localhost
+  password: password
+  host: db
+  port: 5432
 
 development:
   <<: *default
-  database: pg_dev
+  database: line-bot_devevelopment
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: pg_test
+  database: line-bot_test
 
 production:
   <<: *default
