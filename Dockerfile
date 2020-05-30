@@ -14,3 +14,5 @@ COPY ./initialize.sh /docker-entrypoint-initdb.d/
 RUN set -x && gem update --system && gem install bundler:2.1.4
 RUN bundle install
 COPY . $APP_ROOT
+
+CMD ["rails", "server", "-b", "0.0.0.0"]
